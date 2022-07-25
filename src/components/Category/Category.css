@@ -1,0 +1,28 @@
+.category {
+    min-width: 180px;
+    padding-left: 15px;
+
+}
+.category button {
+    border: #4664c2;
+    width: 100%;
+    border-radius: 5px;
+    background: #4664c2;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.category button:hover {
+    border: #2d3a85;
+    border-radius: 5px;
+    background: #2d3a85;
+    color: white;
+    padding: 5px 10px;
+}
+.category li {
+    margin: 5px 0;
+}
+.category ul {
+    list-style-type: none;
+    padding: 0;
+}
