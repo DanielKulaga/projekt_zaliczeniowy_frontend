@@ -1,11 +1,13 @@
 import './MenuList.css';
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Category from "../Category/Category";
 import {menuListApi} from "../../api/menuListApi";
+import {ShoppingCardContext} from "../../context/shoppingCardContext";
 
 function MenuList() {
     const [menuList, setMenuList] = useState([])
     const [category, setCategory] = useState(1)
+    const {addItemToOrder} = useContext(ShoppingCardContext)
     useEffect(()=> {
         menuListApi.getMenuList(category).then((response)=>{
                 setMenuList(response);
@@ -13,7 +15,7 @@ function MenuList() {
     },[category])
 
     function addToOrder(product){
-        console.log("Added to order")
+        addItemToOrder(product)
     }
 
     function categoryOnClick(categoryId){
