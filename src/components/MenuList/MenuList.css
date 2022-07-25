@@ -1,0 +1,42 @@
+.menu-list {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-list .item {
+    width: 300px;
+    height: 100%;
+    border: 1px solid #333;
+}
+
+.menu-list .item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+}
+
+.menu-list .item .info{
+    padding: 10px;
+}
+.menu-list .item button {
+    border: #4664c2;
+    border-radius: 5px;
+    background: #4664c2;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.menu-list .item button:hover {
+    border: #2d3a85;
+    border-radius: 5px;
+    background: #2d3a85;
+    color: white;
+    padding: 5px 10px;
+}
+.website {
+    display: flex;
+    align-items: flex-start;
+}
