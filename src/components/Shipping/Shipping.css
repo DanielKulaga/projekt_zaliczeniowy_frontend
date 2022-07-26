@@ -1,0 +1,11 @@
+.shipping .shipping-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+
+}
+.shipping .shipping-form input {
+    margin-bottom: 15px;
+    padding: 5px;
+}
