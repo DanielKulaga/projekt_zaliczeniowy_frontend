@@ -1,0 +1,22 @@
+.shopping-card {
+    padding: 20px;
+}
+
+.shopping-card .item {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+}
+
+.shopping-card .item img{
+    width: 50%;
+    height: 200px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.shopping-card .item .info{
+    padding: 10px;
+}
