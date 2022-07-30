@@ -8,9 +8,9 @@ export const ShoppingCardContext = createContext({
     removeItemFromOrder: () => {
         // This is intentional
     },
-    // totalNumberOfItems: () => {
-    //     return 0;
-    // }
+    cleanShoppingCard: () => {
+        // This is intentional
+    }
 });
 
 const getOrder = () => {
@@ -50,22 +50,18 @@ export const ShoppingCardContextProvider = ({children}) => {
         setOrderToStorage(newOrder);
         setOrder(newOrder);
     }
-    // const totalNumberOfItems = () => {
-    //     console.log(order.values())
-    //     let total = 0
-    //     for (const [key, value] of order) {
-    //         total += value.quantity;
-    //     }
-    //     return total;
-    //
-    // }
+    const cleanShoppingCard = () => {
+        let newOrder = new Map()
+        setOrderToStorage(newOrder);
+        setOrder(newOrder);
+    }
 
     return (
         <ShoppingCardContext.Provider value={{
             order,
             addItemToOrder,
             removeItemFromOrder,
-          //  totalNumberOfItems,
+            cleanShoppingCard,
         }}>
             {children}
         </ShoppingCardContext.Provider>

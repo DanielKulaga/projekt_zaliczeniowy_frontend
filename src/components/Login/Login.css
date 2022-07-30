@@ -1,0 +1,10 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.login-page button{
+    margin: 20px;
+}

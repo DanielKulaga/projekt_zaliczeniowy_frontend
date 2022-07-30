@@ -5,14 +5,15 @@ import {Button, IconButton} from "@mui/material";
 import {ShoppingCardContext} from "../../context/shoppingCardContext";
 import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
 import RemoveCircleOutlineRoundedIcon from '@mui/icons-material/RemoveCircleOutlineRounded';
+import {LoginContext} from "../../context/loginContext";
 
 function ShoppingCard() {
     const {order, addItemToOrder, removeItemFromOrder} = useContext(ShoppingCardContext)
+    const {token} = useContext(LoginContext)
 
     const getTotalValueOfOrder = () => {
         let total = 0
         for (const [key, value] of order) {
-            console.log(value)
             total += value.quantity * value.item.price;
         }
         return total;
@@ -53,12 +54,17 @@ function ShoppingCard() {
 
             <h3>Total value of order: {getTotalValueOfOrder()} zł</h3>
 
+            {
+                !token && (
+                    <p>Login to continue your order</p>
+                )
+            }
             <Button
                 variant="contained"
                 className="order-button"
                 component={Link}
                 to="/shipping-address"
-                disabled={order.size === 0}>
+                disabled={order.size === 0 || !token}>
                 Go to shipping address
             </Button>
         </div>
