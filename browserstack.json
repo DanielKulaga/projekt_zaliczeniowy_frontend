@@ -1,0 +1,35 @@
+{
+    "auth": {
+        "username": "danielkulaga_0cDmGa",
+        "access_key": "oFRsxRqy5p5yXaaXd6fb"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": ["latest"]
+        },
+        {
+            "browser": "chrome",
+            "os": "Windows 11",
+            "versions": ["latest"]
+        }
+    ],
+    "run_settings": {
+       "cypress_config_file": "cypress.json",
+        "project_name": "restaurant-ruczaj",
+        "build_name": "Cypress Build Test",
+        "exclude": [],
+        "parallels": "2",
+        "npm_dependencies": {},
+        "package_config_options": {},
+        "headless": true
+    },
+    "connection_settings": {
+        "local": false,
+        "local_identifier": null,
+        "local_mode": null,
+        "local_config_file": null
+    },
+    "disable_usage_reporting": false
+}
