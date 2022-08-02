@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=DanielKulaga_projekt_zaliczeniowy_frontend&metric=bugs)](https://sonarcloud.io/summary/new_code?id=DanielKulaga_projekt_zaliczeniowy_frontend)
+
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=DanielKulaga_projekt_zaliczeniowy_frontend&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=DanielKulaga_projekt_zaliczeniowy_frontend)
+
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=DanielKulaga_projekt_zaliczeniowy_frontend&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=DanielKulaga_projekt_zaliczeniowy_frontend)
+
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=DanielKulaga_projekt_zaliczeniowy_frontend&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=DanielKulaga_projekt_zaliczeniowy_frontend)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
