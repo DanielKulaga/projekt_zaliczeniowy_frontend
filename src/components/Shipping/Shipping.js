@@ -1,9 +1,15 @@
 import './Shipping.css';
-import {useState} from "react";
+import {useState, useContext} from "react";
 import {Button} from "@mui/material";
 import Payment from "../Payment/Payment";
+import {ShoppingCardContext} from "../../context/shoppingCardContext";
+import {orderApi} from "../../api/orderApi.js";
+import {LoginContext} from "../../context/loginContext";
+import {addressApi} from "../../api/addressApi";
 
 function Shipping(){
+    const {order, saveOrderId} = useContext(ShoppingCardContext);
+    const {email} = useContext(LoginContext);
     const[street, setStreet] = useState("");
     const[number, setNumber] = useState("");
     const[city, setCity] = useState("");
@@ -11,8 +17,21 @@ function Shipping(){
     const[submit, setSubmit] = useState(false);
     function handleSubmit(event) {
         event.preventDefault()
-        setSubmit(true);
-        console.log("Form is submitted")
+        orderApi.createOrderSummary({
+            dishes: JSON.stringify([...order]),
+            email
+        }).then(orderId=>{
+            saveOrderId(orderId.ID)
+            addressApi.createAddressSummary({
+                orderId: orderId.ID,
+                address: `${street} ${number}, ${zipcode} ${city}`
+            }).then(response=>{
+                setSubmit(true)
+                console.log("Form is submitted")
+                console.log(response)
+            })
+        })
+
     }
     return (
         <div className="shipping">
