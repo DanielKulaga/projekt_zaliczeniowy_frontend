@@ -2,6 +2,10 @@ import {useState, createContext} from "react";
 
 export const ShoppingCardContext = createContext({
     order: new Map(),
+    // orderId: 0,
+    saveOrderId: () => {
+        // This is intentional
+    },
     addItemToOrder: () => {
         // This is intentional
     },
@@ -25,9 +29,28 @@ const setOrderToStorage = (items) => {
     localStorage.setItem("order", JSON.stringify([...items]));
 }
 
+const getId = () => {
+    if (localStorage.getItem('orderId')) {
+        return localStorage.getItem('orderId');
+    } else {
+        return 0;
+    }
+}
+
+const setId = (id) => {
+    localStorage.setItem("orderId", id);
+}
+
 export const ShoppingCardContextProvider = ({children}) => {
     const [order, setOrder] = useState(getOrder());
-    //const [totalNumber, setTotalNumber] = useState(0);
+    const [orderId, setOrderId] = useState(getId());
+
+    const saveOrderId = (newOrderId) => {
+        setOrderId(newOrderId);
+        setId(newOrderId);
+        console.log(newOrderId)
+    }
+
 
     const addItemToOrder = (newItem) => {
         let newOrder = new Map(order)
@@ -59,6 +82,8 @@ export const ShoppingCardContextProvider = ({children}) => {
     return (
         <ShoppingCardContext.Provider value={{
             order,
+            orderId,
+            saveOrderId,
             addItemToOrder,
             removeItemFromOrder,
             cleanShoppingCard,
