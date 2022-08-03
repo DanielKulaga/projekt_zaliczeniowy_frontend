@@ -15,6 +15,7 @@ function ShoppingCard() {
         let total = 0
         for (const [key, value] of order) {
             total += value.quantity * value.item.price;
+            console.log(key)
         }
         return total;
     }

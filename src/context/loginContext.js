@@ -23,11 +23,11 @@ export const LoginContextProvider = ({children}) => {
     const [token, setToken] = useState(getTokenFromStorage());
     const [email, setEmail] = useState(getEmailFromStorage());
 
-    const logIn = (token, email) => {
-        localStorage.setItem("token", token);
-        localStorage.setItem("email", email);
-        setToken(token);
-        setEmail(email);
+    const logIn = (tok, e_mail) => {
+        localStorage.setItem("token", tok);
+        localStorage.setItem("email", e_mail);
+        setToken(tok);
+        setEmail(e_mail);
     }
 
     const logOut = () => {

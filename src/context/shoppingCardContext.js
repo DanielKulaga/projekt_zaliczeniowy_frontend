@@ -31,7 +31,7 @@ const setOrderToStorage = (items) => {
 
 const getId = () => {
     if (localStorage.getItem('orderId')) {
-        return localStorage.getItem('orderId');
+        return Number(localStorage.getItem('orderId'));
     } else {
         return 0;
     }

@@ -2,11 +2,11 @@ import './Category.css';
 import {useEffect, useState} from "react";
 import {categoryApi} from "../../api/categoryApi";
 function Category({categoryOnClick}) {
-    const [category, setCategory] = useState([])
+    const [categories, setCategories] = useState([])
 
     useEffect(()=> {
         categoryApi.getCategory().then((response)=>{
-            setCategory(response);
+            setCategories(response);
         })
     },[])
 
@@ -14,7 +14,7 @@ function Category({categoryOnClick}) {
         <div className="category">
             <h4>Categories</h4>
             <ul>
-                {category.map((category, index)=>(
+                {categories.map((category, index)=>(
                     <li key={index}><button type="button" onClick={()=>categoryOnClick(category.ID)}>{category.name}</button></li>
                 ))}
             </ul>

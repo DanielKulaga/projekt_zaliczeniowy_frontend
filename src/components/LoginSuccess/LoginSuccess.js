@@ -1,6 +1,5 @@
 import {useSearchParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import {useContext} from "react";
+import {useEffect, useState, useContext} from "react";
 import {LoginContext} from "../../context/loginContext";
 
 function LoginSuccess() {
@@ -9,12 +8,12 @@ function LoginSuccess() {
     const [email, setEmail] = useState("")
 
     useEffect(() => {
-        const email = searchParams ? searchParams.get('email') : "";
+        const emailParam = searchParams ? searchParams.get('email') : "";
         const token = searchParams ? searchParams.get('token') : "";
 
-        setEmail(email);
+        setEmail(emailParam);
 
-        logIn(token,email)
+        logIn(token,emailParam)
     }, [searchParams])
 
     return (

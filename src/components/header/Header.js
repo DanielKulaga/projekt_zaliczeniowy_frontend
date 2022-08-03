@@ -1,10 +1,9 @@
 import './Header.css';
-import {Badge, IconButton} from "@mui/material";
+import {Badge, IconButton, Button} from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import {Link} from "react-router-dom";
 import {useContext} from "react";
 import {ShoppingCardContext} from "../../context/shoppingCardContext";
-import {Button} from "@mui/material";
 import {LoginContext} from "../../context/loginContext";
 
 function Header() {
@@ -16,6 +15,7 @@ function Header() {
         let total = 0
         for (const [key, value] of order) {
             total += value.quantity;
+            console.log(key)
         }
         return total;
     }

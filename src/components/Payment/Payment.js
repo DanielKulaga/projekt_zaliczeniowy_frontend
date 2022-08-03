@@ -5,10 +5,10 @@ import {
 
 import {loadStripe} from '@stripe/stripe-js';
 import PaymentForm from "../PaymentForm/PaymentForm";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import {paymentApi} from "../../api/paymentApi";
 import {ShoppingCardContext} from "../../context/shoppingCardContext";
-import {useContext} from "react";
+
 
 
 
@@ -21,7 +21,7 @@ function Payment() {
     const getTotalValueOfOrder = () => {
         let total = 0
         for (const [key, value] of order) {
-            console.log(value)
+            console.log(value, key)
             total += value.quantity * value.item.price;
         }
         return total;
